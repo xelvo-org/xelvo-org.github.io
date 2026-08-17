@@ -1,380 +1,387 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Privacy Policy for the Xelvo media player.">
-  <title>Privacy Policy | Xelvo</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --background: #f7f8fa;
-      --surface: #ffffff;
-      --text: #17191c;
-      --muted: #5f6670;
-      --border: #dfe3e8;
-      --accent: #126e5a;
-      --max-width: 760px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #101214;
-        --surface: #171a1d;
-        --text: #f1f3f5;
-        --muted: #adb5bd;
-        --border: #343a40;
-        --accent: #68d5b8;
-      }
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 16px;
-      line-height: 1.65;
-      letter-spacing: 0;
-    }
-
-    header,
-    main,
-    footer {
-      width: min(100% - 32px, var(--max-width));
-      margin-inline: auto;
-    }
-
-    header {
-      padding: 56px 0 28px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    main {
-      padding: 20px 0 56px;
-    }
-
-    footer {
-      padding: 24px 0 40px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(2rem, 8vw, 3rem);
-      line-height: 1.15;
-      letter-spacing: 0;
-    }
-
-    h2 {
-      margin: 36px 0 10px;
-      font-size: 1.3rem;
-      line-height: 1.3;
-      letter-spacing: 0;
-    }
-
-    h3 {
-      margin: 24px 0 8px;
-      font-size: 1.05rem;
-      line-height: 1.4;
-      letter-spacing: 0;
-    }
-
-    p,
-    ul {
-      margin: 10px 0;
-    }
-
-    ul {
-      padding-left: 24px;
-    }
-
-    li + li {
-      margin-top: 6px;
-    }
-
-    a {
-      color: var(--accent);
-      overflow-wrap: anywhere;
-      text-underline-offset: 3px;
-    }
-
-    .effective-date {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .summary {
-      margin: 22px 0 10px;
-      padding: 18px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
-
-    address {
-      font-style: normal;
-    }
-
-    @media (max-width: 520px) {
-      header {
-        padding-top: 36px;
-      }
-
-      main {
-        padding-bottom: 40px;
-      }
-    }
-
-    @media print {
-      :root {
-        --background: #ffffff;
-        --surface: #ffffff;
-        --text: #000000;
-        --muted: #444444;
-        --border: #cccccc;
-        --accent: #000000;
-      }
-
-      body {
-        font-size: 11pt;
-      }
-
-      header,
-      main,
-      footer {
-        width: 100%;
-      }
-
-      header {
-        padding-top: 0;
-      }
-
-      h2 {
-        break-after: avoid;
-      }
-
-      a {
-        text-decoration: none;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Privacy Policy for Xelvo</h1>
-    <p class="effective-date">Effective date: <time datetime="2026-07-13">July 13, 2026</time></p>
-  </header>
-
-  <main>
-    <p>
-      This Privacy Policy explains how the Xelvo mobile application ("Xelvo", "the app",
-      "we", "us") handles information. Xelvo is a local-first media player for playing
-      video and audio files stored on your device and direct media streaming URLs you
-      enter. Xelvo may download optional playback support through Google Play when a file
-      cannot be played by your device's built-in decoder.
-    </p>
-
-    <section aria-labelledby="summary">
-      <h2 id="summary">1. Summary</h2>
-      <div class="summary">
-        Xelvo does not require an account and does not upload your media files. Your
-        videos, music, and other local files stay on your device. Streaming URLs you
-        enter are used by your device to connect directly to the destination address.
-        We do not sell your personal information.
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Privacy policy for Xelvo, an Android local media player."
+    >
+    <link rel="canonical" href="https://xelvo-org.github.io/player-site/privacy.html">
+    <link rel="stylesheet" href="assets/site.css">
+    <title>Privacy Policy | Xelvo</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="identity-row">
+          <a class="brand" href="support.html" aria-label="Xelvo support home">
+            <span class="brand-mark" aria-hidden="true">X</span>
+            <span>
+              <span class="brand-name">Xelvo</span>
+              <span class="brand-context">Local media player for Android</span>
+            </span>
+          </a>
+          <nav class="site-nav" aria-label="Primary">
+            <ul>
+              <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+              <li><a href="terms.html">Terms</a></li>
+              <li><a href="support.html">Support</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
-      <p>
-        The app uses third-party services (Google AdMob for advertising and Google
-        Firebase for crash reporting, analytics, and configuration) that may collect
-        limited data as described below. Optional extended playback support runs on your
-        device and does not upload your media to Xelvo.
-      </p>
-    </section>
+    </header>
 
-    <section aria-labelledby="not-collected">
-      <h2 id="not-collected">2. Information We Do Not Collect</h2>
-      <ul>
-        <li>We do not require you to create an account or sign in.</li>
-        <li>We do not collect your name, email address, phone number, or contacts.</li>
-        <li>
-          We do not upload, copy, or transmit your media files (videos, music, subtitles)
-          to our servers or anyone else. The app only reads local files on your device to
-          play them.
-        </li>
-        <li>
-          We do not provide media content, search for media, download videos, bypass DRM,
-          or parse streaming websites.
-        </li>
-        <li>We do not send streaming URLs you enter to our own servers.</li>
-      </ul>
-    </section>
+    <div class="page-shell">
+      <main id="main-content" class="page-main">
+        <header class="page-intro">
+          <p class="eyebrow">Xelvo legal</p>
+          <h1>Privacy policy</h1>
+          <p class="lede">
+            Xelvo is built for media you already have. Local media stays on your
+            device by default, while optional Google services are kept separate
+            from the core playback task.
+          </p>
+          <p class="meta">Last updated: August 17, 2026</p>
+        </header>
 
-    <section aria-labelledby="third-parties">
-      <h2 id="third-parties">3. Information Collected by Third-Party Services</h2>
-      <p>
-        To keep Xelvo free and to improve it, we use the following third-party services,
-        which may collect data automatically:
-      </p>
+        <div class="summary-band" aria-labelledby="privacy-summary">
+          <h2 id="privacy-summary">At a glance</h2>
+          <ul>
+            <li>Xelvo does not require an account and has no approved Xelvo backend.</li>
+            <li>Local media is not uploaded by default.</li>
+            <li>
+              Ads, Ad privacy options, usage and crash diagnostics, remote
+              configuration, and purchases use Google services only when their
+              feature, configuration, and consent requirements allow.
+            </li>
+            <li>
+              Android Clear storage or uninstall removes Xelvo's app-local records
+              and settings, not source media.
+            </li>
+          </ul>
+        </div>
 
-      <h3>Google AdMob (advertising)</h3>
-      <p>
-        AdMob may collect and process device identifiers (including advertising ID),
-        approximate location derived from IP address, and ad interaction data to serve
-        and measure ads. For users in regions such as the European Economic Area, we
-        present a consent form (via Google's User Messaging Platform) allowing you to
-        manage ad personalization.
-      </p>
-      <p>
-        Learn more:
-        <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and
-        <a href="https://support.google.com/admob/answer/6128543">AdMob privacy information</a>.
-      </p>
+        <section id="scope" class="content-section">
+          <h2>1. Scope</h2>
+          <p>
+            This policy explains how the Xelvo Android app handles information
+            during local playback, user-requested network playback, advertising,
+            telemetry, remote configuration, Google Play purchases, and support.
+            In this policy, "Xelvo," "we," and "us" refer to the provider of the
+            Xelvo app.
+          </p>
+          <p>
+            Third-party services and websites have their own privacy practices.
+            Their policies apply when they process information.
+          </p>
+        </section>
 
-      <h3>Google Firebase (Crashlytics, Analytics, Remote Config)</h3>
-      <p>
-        Firebase may collect crash logs, diagnostic and performance data, app usage
-        events, and device identifiers to help us fix problems and understand how the app
-        is used. Remote Config is used to adjust app settings (such as ad frequency)
-        without an update.
-      </p>
-      <p>
-        When playback starts or fails, or when the app switches between installed
-        playback engines, we may log non-identifying technical categories such as the
-        engine used (Media3 or libVLC), result, failure stage, container and codec family,
-        resolution bucket, source type, and handoff outcome and latency bucket. These
-        categories help us measure format support and playback reliability. We do not log
-        file names, folder paths, media titles, streaming URLs, exact decoder names, or
-        exception messages for this purpose.
-      </p>
-      <p>
-        Learn more:
-        <a href="https://firebase.google.com/support/privacy">Firebase privacy and security</a>.
-      </p>
-      <p>
-        These services act as independent data controllers/processors for the data they
-        collect. We encourage you to review their privacy policies.
-      </p>
-    </section>
+        <section id="on-device" class="content-section">
+          <h2>2. Information handled on your device</h2>
+          <p>
+            With Android permission or a file selection you make, Xelvo can read
+            local media needed to browse and play it. The app can keep app records
+            such as playback activity and progress, favorites and playlists,
+            settings, local diagnostics, and data waiting for an eligible
+            telemetry request.
+          </p>
+          <p>
+            Media filenames, titles, folders, paths, URIs, media content,
+            subtitles, lyrics, artwork, search terms, playlist names, bookmarks,
+            and exact playback positions are not sent as Xelvo telemetry. Local
+            media is not uploaded to an Xelvo server by default, and Xelvo does
+            not currently provide an account or cloud sync.
+          </p>
+          <p>
+            If you explicitly open an HTTP or HTTPS media address, Xelvo connects
+            to the host you selected so it can request that media. The host and
+            network providers may receive normal connection information such as
+            your IP address. Xelvo does not save URL credentials, cookies, tokens,
+            or custom authentication headers.
+          </p>
+        </section>
 
-    <section aria-labelledby="optional-playback">
-      <h2 id="optional-playback">4. Optional Playback Support</h2>
-      <p>
-        For some formats, Xelvo may download optional extended playback support through
-        Google Play. This component uses open-source VideoLAN playback technology. VLC
-        and VideoLAN are trademarks of the VideoLAN non-profit organization.
-      </p>
-      <p>
-        The optional playback component runs locally on your device. It does not give
-        Xelvo a server-side copy of your media files, file names, folder paths, or
-        streaming URLs. Google Play may process information related to downloading and
-        installing app components according to Google's policies.
-      </p>
-    </section>
+        <section id="services" class="content-section">
+          <h2>3. Google services</h2>
+          <p>
+            Availability and collection depend on the released app build,
+            configuration, region, consent status, and the service's own rules.
+            Local playback remains available when these services or the network
+            are unavailable.
+          </p>
 
-    <section aria-labelledby="streaming">
-      <h2 id="streaming">5. Streaming URLs and Network Connections</h2>
-      <p>
-        If you enter a direct streaming URL, your device connects to that URL to play the
-        media. We do not send the URL to our own servers. The destination server may
-        receive your IP address, device network information, and request details as part
-        of normal media delivery. HTTPS streams are encrypted in transit. If you choose
-        an <code>http://</code> URL, that media stream may not be encrypted by the provider.
-      </p>
-    </section>
+          <div class="service-list">
+            <article class="service">
+              <span class="service-label">Advertising and consent</span>
+              <h3>Google AdMob and User Messaging Platform (UMP)</h3>
+              <p>
+                When ads are enabled and a request is permitted, Google may
+                process device or other identifiers, app and ad interactions,
+                approximate location derived from network information, and
+                related technical data to deliver and measure ads, apply Ad
+                privacy options, prevent abuse, and meet legal requirements. UMP
+                provides Ad privacy options where applicable. Xelvo remains fully
+                usable whichever option you choose; ads may become
+                non-personalized, limited, or unavailable.
+              </p>
+              <p>If a Google ad cannot be requested or is unavailable, the library may instead show a bundled Xelvo message about ad-free options. That local message does not create an AdMob request or record a House impression or click. Opening the in-app options does not by itself send House interaction data; a later Google Play purchase or rewarded-ad choice uses the applicable Google service under its own rules.</p>
+            </article>
 
-    <section aria-labelledby="permissions">
-      <h2 id="permissions">6. Permissions We Use</h2>
-      <ul>
-        <li>
-          <strong>Media / storage access</strong> (READ_MEDIA_VIDEO, READ_MEDIA_AUDIO, or
-          READ_EXTERNAL_STORAGE on older devices): to find and play the video and audio
-          files on your device. This access is used only to play your files locally.
-        </li>
-        <li>
-          <strong>Foreground service / notifications:</strong> to enable background audio
-          playback and playback controls in the notification and on the lock screen.
-        </li>
-        <li>
-          <strong>Internet / network state:</strong> to load ads, Firebase configuration,
-          optional playback support through Google Play, and user-entered streaming URLs.
-        </li>
-      </ul>
-    </section>
+            <article class="service">
+              <span class="service-label">Product telemetry</span>
+              <h3>Firebase Analytics</h3>
+              <p>
+                When Analytics is enabled and consented, Xelvo may report app
+                lifecycle activity, whether a feature was used, workflow results,
+                and closed technical categories such as container, codec, failure
+                stage, and compatibility fallback result. These reports are
+                designed not to include media identity, media content, user-entered
+                text, or raw error messages. When Analytics collection is
+                allowed, it uses app-instance or installation identifiers and
+                may use the Advertising ID for acquisition attribution; AdMob
+                may use it for ads. Where required, Google UMP privacy options
+                manage both advertising consent and Analytics storage through
+                Google Consent Mode. Xelvo does not show a second Analytics
+                prompt or keep a duplicate consent record. Outside those
+                regions, Analytics may run as ordinary app operation. With
+                Analytics storage declined, advanced Consent Mode may still
+                send limited, non-persistent consent and activity signals
+                without Advertising ID, cookies, or Analytics persistent
+                identifiers. Xelvo also keeps a global switch to stop collection remotely.
+                Analytics never affects local playback.
+              </p>
+            </article>
 
-    <section aria-labelledby="protection">
-      <h2 id="protection">7. How Data Is Protected</h2>
-      <p>
-        Data transmitted by the third-party services above is sent over encrypted
-        connections (HTTPS). Media streams use the protocol of the URL you choose; HTTPS
-        streams are encrypted, while HTTP streams may not be.
-      </p>
-    </section>
+            <article class="service">
+              <span class="service-label">Reliability</span>
+              <h3>Firebase Crashlytics</h3>
+              <p>
+                In production builds, Crashlytics is enabled by default for
+                reliability and security. Google may process crash logs, ANR information,
+                diagnostics, and app or device technical information. Xelvo
+                limits explicit reports to sanitized categories and does not
+                intentionally attach media names, paths, URLs, content, user
+                input, screenshots, or raw exception text. Every user can turn
+                crash reporting off under Privacy &amp; legal → Data
+                collection. The change fully applies after Xelvo restarts, when
+                reports waiting to be sent are deleted.
+                Reports already uploaded cannot be recalled. Xelvo also keeps
+                a global emergency switch.
+              </p>
+            </article>
 
-    <section aria-labelledby="children">
-      <h2 id="children">8. Children's Privacy</h2>
-      <p>
-        Xelvo is intended for users aged 18 and older and is not directed to minors under
-        18. We do not knowingly collect personal information from minors under 18.
-      </p>
-    </section>
+            <article class="service">
+              <span class="service-label">Configuration</span>
+              <h3>Firebase Remote Config</h3>
+              <p>
+                When enabled, Xelvo can fetch approved app configuration from
+                Firebase. Firebase may handle app-instance and technical app or
+                device information for that request. Remote configuration cannot
+                grant consent, bypass UMP or the Crashlytics user setting, or
+                make core local playback depend on the service; telemetry
+                switches can only stop their corresponding collection.
+              </p>
+            </article>
 
-    <section aria-labelledby="choices">
-      <h2 id="choices">9. Your Choices</h2>
-      <ul>
-        <li>
-          You can reset or limit your advertising ID in your device settings
-          (Settings &gt; Privacy &gt; Ads).
-        </li>
-        <li>
-          In supported regions, you can manage ad personalization through the consent
-          prompt shown in the app.
-        </li>
-        <li>
-          You can revoke media/storage permission at any time in your device's app
-          settings (the app will then be unable to list your files).
-        </li>
-        <li>
-          You can remove optional playback support from Xelvo's settings when it is
-          installed.
-        </li>
-      </ul>
-    </section>
+            <article class="service">
+              <span class="service-label">Purchases</span>
+              <h3>Google Play Billing</h3>
+              <p>
+                Google Play processes subscriptions and one-time purchases.
+                Google may handle payment, purchase history, account, device, and
+                transaction information under its own policy. Xelvo receives the
+                product and entitlement status needed to provide ad-free access;
+                Xelvo does not require a separate account or receive full
+                payment-card details.
+              </p>
+            </article>
+          </div>
 
-    <section aria-labelledby="retention">
-      <h2 id="retention">10. Data Retention and Deletion</h2>
-      <p>
-        We do not maintain user accounts or store your personal data on our own servers.
-        Data collected by AdMob and Firebase is retained according to their respective
-        policies. For any questions or requests regarding data, contact us at
-        <a href="mailto:xelvo.support@gmail.com">xelvo.support@gmail.com</a>.
-      </p>
-    </section>
+          <p>
+            Learn more in
+            <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>
+            and
+            <a href="https://firebase.google.com/support/privacy">Firebase Privacy and Security</a>.
+          </p>
+        </section>
 
-    <section aria-labelledby="changes">
-      <h2 id="changes">11. Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. Changes will be posted on
-        this page with an updated effective date.
-      </p>
-    </section>
+        <section id="support" class="content-section">
+          <h2>4. Support communications</h2>
+          <p>
+            If you email support, we receive the email address and message content
+            you choose to send so we can understand and respond to the request.
+            Do not send media files, filenames, paths, URLs, subtitles, lyrics,
+            playlists, credentials, payment-card details, or other private
+            content. See the <a href="support.html">support page</a> for safer
+            diagnostic details to include.
+          </p>
+        </section>
 
-    <section aria-labelledby="contact">
-      <h2 id="contact">12. Contact</h2>
-      <address>
-        If you have any questions about this Privacy Policy, contact us at:
-        <a href="mailto:xelvo.support@gmail.com">xelvo.support@gmail.com</a>.
-      </address>
-    </section>
-  </main>
+        <section id="excluded-data" class="content-section">
+          <h2>5. Data Xelvo does not use for telemetry</h2>
+          <p>Xelvo telemetry is not designed to collect or report:</p>
+          <ul>
+            <li>
+              Media filenames, titles, directories, paths, URIs, URLs, audio,
+              video, subtitles, lyrics, artwork, or screenshots.
+            </li>
+            <li>
+              Artist or album names, search terms, playlist or bookmark names,
+              clipboard content, or other user-entered text.
+            </li>
+            <li>
+              Exact playback positions, complete queues, item-level history,
+              file-operation targets, or full app databases.
+            </li>
+            <li>
+              Passwords, tokens, cookies, authentication headers, raw exception
+              messages, or unsanitized logs.
+            </li>
+            <li>
+              Android ID, IMEI, MAC address, SSID, or hardware serial number as
+              Xelvo-defined telemetry fields.
+            </li>
+          </ul>
+        </section>
 
-  <footer>
-    <p>&copy; 2026 Xelvo. This page does not use cookies or tracking scripts.</p>
-  </footer>
-</body>
+        <section id="controls" class="content-section">
+          <h2>6. Ad privacy, usage data, and app storage</h2>
+          <dl class="plain-definition">
+            <div>
+              <dt>Media access</dt>
+              <dd>
+                Android permissions and the system file picker control which media
+                Xelvo can access. Revoking access can limit browsing or playback.
+              </dd>
+            </div>
+            <div>
+              <dt>Ad privacy options</dt>
+              <dd>
+                Where UMP makes them available, Ad privacy options let you review
+                or update advertising and Analytics storage choices. Xelvo
+                remains fully usable whichever option you choose. Depending on
+                your choice, region, and service availability, ads may be
+                non-personalized, limited, or unavailable. A change applies to
+                eligible future processing; it does not promise deletion of
+                provider history. With Analytics storage declined, Google may
+                still receive limited, non-persistent consent and activity
+                signals without Advertising ID, cookies, or Analytics
+                persistent identifiers.
+              </dd>
+            </div>
+            <div>
+              <dt>Usage and crash diagnostics</dt>
+              <dd>
+                Analytics follows the Google privacy choice described above.
+                Crashlytics is separately enabled by default for reliability,
+                and every user can turn it off under Data collection. Turning it
+                off fully applies after Xelvo restarts and deletes reports still
+                waiting to be sent; uploaded reports cannot be recalled. Local
+                playback is never affected.
+              </dd>
+            </div>
+            <div>
+              <dt>Android Clear storage and uninstall</dt>
+              <dd>
+                Android system Clear storage and uninstall can remove Xelvo's
+                app-local records and settings, subject to Android behavior.
+                These system actions do not delete source media or provider-held
+                service history.
+              </dd>
+            </div>
+            <div>
+              <dt>Explicit media-file deletion</dt>
+              <dd>
+                A delete operation you explicitly confirm for selected media is a
+                separate device-file action. When Android authorization and the
+                source allow it, that action can delete the selected source media.
+              </dd>
+            </div>
+          </dl>
+
+          <p class="note">
+            <strong>No remote deletion service:</strong> Xelvo has no account or
+            approved backend and cannot identify or delete provider-held AdMob,
+            Firebase, or Google Play records on your behalf.
+          </p>
+        </section>
+
+        <section id="retention" class="content-section">
+          <h2>7. Retention and deletion limits</h2>
+          <p>
+            Local app records remain in Xelvo's app storage until changed or
+            removed through Android system Clear storage or uninstall, subject to
+            Android behavior. Those system actions remove app-local records and
+            settings, not source media. An explicit delete operation for selected
+            media is a separate device-file action.
+          </p>
+          <p>
+            Google services apply their own retention and deletion rules. Xelvo
+            does not promise deletion of provider-held information, including
+            information already received that Xelvo cannot identify as belonging
+            to a particular person or device. Use the relevant Google account,
+            service, and privacy controls for provider-held information.
+          </p>
+        </section>
+
+        <section id="age" class="content-section">
+          <h2>8. Age</h2>
+          <p>
+            Xelvo is intended for people aged 18 and over. It is not directed to
+            children.
+          </p>
+        </section>
+
+        <section id="changes" class="content-section">
+          <h2>9. Changes to this policy</h2>
+          <p>
+            This policy may be updated when Xelvo's features, service
+            configuration, or release requirements change. The updated page will
+            show a new "Last updated" date. Material differences must be reflected
+            in the app and store disclosures where required.
+          </p>
+        </section>
+
+        <section id="contact" class="content-section">
+          <h2>10. Contact</h2>
+          <p>For privacy or support questions, contact:</p>
+          <p class="contact-line">
+            <a href="mailto:xelvo.support@gmail.com">xelvo.support@gmail.com</a>
+          </p>
+        </section>
+      </main>
+
+      <nav class="toc" aria-label="On this page">
+        <p class="toc-title">On this page</p>
+        <ul>
+          <li><a href="#scope">Scope</a></li>
+          <li><a href="#on-device">On-device information</a></li>
+          <li><a href="#services">Google services</a></li>
+          <li><a href="#support">Support communications</a></li>
+          <li><a href="#excluded-data">Excluded telemetry data</a></li>
+          <li><a href="#controls">Privacy and app storage</a></li>
+          <li><a href="#retention">Retention limits</a></li>
+          <li><a href="#age">Age</a></li>
+          <li><a href="#changes">Changes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-copy">Xelvo for Android</p>
+        <nav aria-label="Footer">
+          <ul class="footer-nav">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
 </html>
