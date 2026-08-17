@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Help, troubleshooting, and contact information for Xelvo on Android."
+    >
+    <link rel="canonical" href="https://xelvo-org.github.io/player-site/support.html">
+    <link rel="stylesheet" href="assets/site.css">
+    <title>Support | Xelvo</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="identity-row">
+          <a class="brand" href="support.html" aria-label="Xelvo support home">
+            <span class="brand-mark" aria-hidden="true">X</span>
+            <span>
+              <span class="brand-name">Xelvo</span>
+              <span class="brand-context">Local media player for Android</span>
+            </span>
+          </a>
+          <nav class="site-nav" aria-label="Primary">
+            <ul>
+              <li><a href="privacy.html">Privacy</a></li>
+              <li><a href="terms.html">Terms</a></li>
+              <li><a href="support.html" aria-current="page">Support</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-shell">
+      <main id="main-content" class="page-main">
+        <header class="page-intro">
+          <p class="eyebrow">Xelvo support</p>
+          <h1>Help with playback and the app</h1>
+          <p class="lede">
+            Start with the focused checks below. For a problem that continues,
+            email a short description without attaching private media or file
+            details.
+          </p>
+          <p class="meta">Support is provided in English.</p>
+        </header>
+
+        <div class="summary-band" aria-labelledby="support-contact">
+          <h2 id="support-contact">Contact</h2>
+          <p>
+            Email
+            <a href="mailto:xelvo.support@gmail.com">xelvo.support@gmail.com</a>.
+            Xelvo does not provide real-time support.
+          </p>
+        </div>
+
+        <section id="playback" class="content-section">
+          <h2>Playback problems</h2>
+          <ol>
+            <li>Confirm the media is still accessible from its original source.</li>
+            <li>
+              Try opening it directly from Xelvo or through Android's file picker.
+            </li>
+            <li>
+              For a network address, confirm the network is available and retry
+              with HTTPS where the source supports it.
+            </li>
+            <li>
+              Check the visible audio-track and subtitle controls if video,
+              sound, or captions are not as expected.
+            </li>
+          </ol>
+          <p>
+            Compatibility depends on the media, codec, container, Android
+            version, and device. Xelvo does not guarantee every file or format.
+          </p>
+        </section>
+
+        <section id="library" class="content-section">
+          <h2>Missing media or folders</h2>
+          <ul>
+            <li>
+              Review Android media or folder access for Xelvo. A denied or
+              revoked permission can limit what appears.
+            </li>
+            <li>
+              Use the app's refresh action after adding, moving, or renaming
+              media outside Xelvo.
+            </li>
+            <li>
+              Opening one item from another app does not grant access to scan the
+              surrounding folder.
+            </li>
+          </ul>
+        </section>
+
+        <section id="purchases" class="content-section">
+          <h2>Ads, privacy, and purchases</h2>
+          <dl class="plain-definition">
+            <div>
+              <dt>Ad privacy options</dt>
+              <dd>
+                Where UMP makes them available, open Ad privacy options from
+                Xelvo's Privacy &amp; legal area to review or update advertising
+                and Analytics storage choices. Xelvo remains fully usable
+                whichever option you choose. Ads may become non-personalized,
+                limited, or unavailable. A change affects eligible future
+                processing and cannot promise deletion of provider history.
+                With Analytics storage declined, Google may still receive
+                limited, non-persistent consent and activity signals without
+                Advertising ID, cookies, or Analytics identifiers.
+              </dd>
+            </div>
+            <div>
+              <dt>Usage and crash diagnostics</dt>
+              <dd>
+                Analytics follows Google privacy options where required.
+                Crashlytics is separately enabled by default for reliability.
+                Every user can turn it off at Privacy &amp; legal → Data
+                collection. Crash collection fully stops after Xelvo restarts,
+                when waiting reports are deleted. Uploaded reports cannot be
+                recalled. Local playback is never affected.
+              </dd>
+            </div>
+            <div>
+              <dt>Ad-free access is missing</dt>
+              <dd>
+                Confirm Google Play is using the account that made the purchase
+                and that the purchase is active. Use the app's purchase restore
+                path when available before contacting support.
+              </dd>
+            </div>
+            <div>
+              <dt>Billing or refund question</dt>
+              <dd>
+                Google Play processes payment, renewal, cancellation, and refund
+                details. Manage the purchase through Google Play. Xelvo support
+                can help identify an app-side entitlement issue but cannot alter
+                Google Play account history.
+              </dd>
+            </div>
+          </dl>
+        </section>
+
+        <section id="app-storage" class="content-section">
+          <h2>Android app storage and media files</h2>
+          <p>
+            Android system Clear storage or uninstall can remove Xelvo's
+            app-local records and settings, subject to Android behavior. These
+            are Android system actions, not an in-app bulk-clear feature.
+          </p>
+          <p class="note">
+            <strong>Your media stays separate.</strong> Android Clear storage and
+            uninstall do not delete source audio or video from the device.
+          </p>
+          <p>
+            A delete operation you explicitly confirm for selected media is
+            separate. When Android authorization and the source allow it, that
+            operation can delete the selected source file. Review its target and
+            effect before confirming.
+          </p>
+          <p>
+            Xelvo has no account or approved backend and cannot identify or
+            delete provider-held AdMob, Firebase, or Google Play records. Ad
+            privacy options and the consent it records apply to eligible future
+            requests or collection; provider controls and policies apply to
+            information already held.
+          </p>
+        </section>
+
+        <section id="open-source" class="content-section">
+          <h2>Open-source and relinking materials</h2>
+          <p>
+            Xelvo's version-specific FFmpeg source and static-link relinking
+            packets are published with the
+            <a href="https://github.com/xelvo-org/player-site/releases"
+              >player-site GitHub releases</a
+            >. Select the release matching the Xelvo app version.
+          </p>
+          <p>
+            If the matching download is unavailable, email
+            <a href="mailto:xelvo.support@gmail.com">xelvo.support@gmail.com</a>.
+          </p>
+        </section>
+
+        <section id="email" class="content-section">
+          <h2>What to include in a support email</h2>
+          <p>Useful details are:</p>
+          <ul>
+            <li>Xelvo app version.</li>
+            <li>Android version and device model.</li>
+            <li>Short steps that reproduce the problem.</li>
+            <li>What you expected and what happened instead.</li>
+            <li>
+              General container or codec information, if known, without a
+              filename or path.
+            </li>
+          </ul>
+          <p>
+            Do not send media files, screenshots containing private content,
+            filenames, folders, paths, URIs, media URLs, subtitles, lyrics,
+            playlists, search terms, credentials, payment-card details, raw logs,
+            or full database exports.
+          </p>
+          <p class="contact-line">
+            <a href="mailto:xelvo.support@gmail.com">xelvo.support@gmail.com</a>
+          </p>
+        </section>
+
+        <section id="policies" class="content-section">
+          <h2>Policies</h2>
+          <p>
+            Read the <a href="privacy.html">Privacy Policy</a> for on-device data,
+            Ad privacy, diagnostics, Google services, and Android app
+            storage details. Use of Xelvo is also subject to the
+            <a href="terms.html">Terms of Use</a>.
+          </p>
+        </section>
+      </main>
+
+      <nav class="toc" aria-label="On this page">
+        <p class="toc-title">On this page</p>
+        <ul>
+          <li><a href="#playback">Playback</a></li>
+          <li><a href="#library">Library access</a></li>
+          <li><a href="#purchases">Ads and purchases</a></li>
+          <li><a href="#app-storage">App storage</a></li>
+          <li><a href="#open-source">Open-source materials</a></li>
+          <li><a href="#email">Email support</a></li>
+          <li><a href="#policies">Policies</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-copy">Xelvo for Android</p>
+        <nav aria-label="Footer">
+          <ul class="footer-nav">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
