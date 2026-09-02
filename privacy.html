@@ -41,7 +41,7 @@
             device by default, while optional Google services are kept separate
             from the core playback task.
           </p>
-          <p class="meta">Last updated: August 17, 2026</p>
+          <p class="meta">Last updated: September 2, 2026</p>
         </header>
 
         <div class="summary-band" aria-labelledby="privacy-summary">
@@ -88,7 +88,10 @@
           <p>
             Media filenames, titles, folders, paths, URIs, media content,
             subtitles, lyrics, artwork, search terms, playlist names, bookmarks,
-            and exact playback positions are not sent as Xelvo telemetry. Local
+            and identifiers derived from those values are not sent as Xelvo telemetry.
+            Playback events may include an exact position. A random playback ID may link the
+            start, decoder transition, and exit of one successful playback; it contains no
+            media information and is not reused for another playback. Local
             media is not uploaded to an Xelvo server by default, and Xelvo does
             not currently provide an account or cloud sync.
           </p>
@@ -124,7 +127,7 @@
                 usable whichever option you choose; ads may become
                 non-personalized, limited, or unavailable.
               </p>
-              <p>If a Google ad cannot be requested or is unavailable, the library may instead show a bundled Xelvo message about ad-free options. That local message does not create an AdMob request or record a House impression or click. Opening the in-app options does not by itself send House interaction data; a later Google Play purchase or rewarded-ad choice uses the applicable Google service under its own rules.</p>
+              <p>If a Google ad cannot be requested or is unavailable, the library may instead show a bundled Xelvo message about ad-free options. That local message does not create an AdMob request. When Analytics is enabled, Xelvo may record that the House message was shown or that its Remove Ads action was used; it does not report ad revenue or media identity.</p>
             </article>
 
             <article class="service">
@@ -132,11 +135,13 @@
               <h3>Firebase Analytics</h3>
               <p>
                 When Analytics is enabled and consented, Xelvo may report app
-                lifecycle activity, whether a feature was used, workflow results,
-                and closed technical categories such as container, codec, failure
-                stage, and compatibility fallback result. These reports are
-                designed not to include media identity, media content, user-entered
-                text, or raw error messages. When Analytics collection is
+                lifecycle and screen activity, including which Xelvo screen is visible,
+                whether a feature was used, workflow results, ad impressions, Remove Ads entry use, and closed technical categories such as container, codec, decoder, failure
+                category, and compatibility fallback result. Xelvo may also report integer-millisecond startup time, active-playing time, finite media duration, playback position, video height, and audio channel count to improve playback compatibility and performance. Firebase may derive standard
+                visible-screen engagement from screen events. These reports are
+                designed not to include media filenames, titles, paths, URIs, URLs,
+                media content, user-entered text, credentials, or raw error messages.
+                A random playback ID may link start, decoder transition, and exit events from one successful playback; it contains no media information, is not persisted by Xelvo, and is not reused for another playback. Playback events may also include the exact non-negative playback position at the start, failure, or exit boundary. When Analytics collection is
                 allowed, it uses app-instance or installation identifiers and
                 may use the Advertising ID for acquisition attribution; AdMob
                 may use it for ads. Where required, Google UMP privacy options
@@ -158,10 +163,15 @@
               <p>
                 In production builds, Crashlytics is enabled by default for
                 reliability and security. Google may process crash logs, ANR information,
-                diagnostics, and app or device technical information. Xelvo
-                limits explicit reports to sanitized categories and does not
+                diagnostics, exception types and stack traces, and app or device technical information. Xelvo
+                may attach a small fixed diagnostic set to crash, non-fatal
+                error, or ANR reports: when three classes of local media work
+                began. These fields do not name the media being processed.
+                Xelvo limits explicit reports to
+                sanitized categories and does not
                 intentionally attach media names, paths, URLs, content, user
-                input, screenshots, or raw exception text. Every user can turn
+                input, screenshots, credentials, or exception details that contain those values, or the system's
+                free-form ANR description. Every user can turn
                 crash reporting off under Privacy &amp; legal → Data
                 collection. The change fully applies after Xelvo restarts, when
                 reports waiting to be sent are deleted.
@@ -230,12 +240,13 @@
               clipboard content, or other user-entered text.
             </li>
             <li>
-              Exact playback positions, complete queues, item-level history,
+              Playback positions other than the approved non-negative position
+              reported at playback start, terminal failure, or exit; complete queues, item-level history,
               file-operation targets, or full app databases.
             </li>
             <li>
-              Passwords, tokens, cookies, authentication headers, raw exception
-              messages, or unsanitized logs.
+              Passwords, tokens, cookies, authentication headers, exception
+              details containing user information, or unsanitized logs.
             </li>
             <li>
               Android ID, IMEI, MAC address, SSID, or hardware serial number as

@@ -7,6 +7,7 @@ This repository hosts the public website for Xelvo Media Player, an Android app 
 - [Xelvo website](https://xelvo-org.github.io/)
 - [Privacy Policy](https://xelvo-org.github.io/privacy.html)
 - [Terms of Use](https://xelvo-org.github.io/terms.html)
+- [Pre-registration Reward Terms](https://xelvo-org.github.io/preregistration-reward-terms.html)
 - [Support](https://xelvo-org.github.io/support.html)
 - [Open-source notices and release materials](https://github.com/xelvo-org/xelvo-open-source/releases)
 
