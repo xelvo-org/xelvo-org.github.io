@@ -99,8 +99,11 @@
             If you explicitly open an HTTP or HTTPS media address, Xelvo connects
             to the host you selected so it can request that media. The host and
             network providers may receive normal connection information such as
-            your IP address. Xelvo does not save URL credentials, cookies, tokens,
-            or custom authentication headers.
+            your IP address. When a stream is retained in Recent, a playlist,
+            Favorites, or the current playback sequence, its URL is stored on
+            your device so Xelvo can play it again. Xelvo removes that stored URL
+            after its last retained reference is removed. Xelvo does not save URL
+            credentials, cookies, tokens, or custom authentication headers.
           </p>
         </section>
 
@@ -136,8 +139,8 @@
               <p>
                 When Analytics is enabled and consented, Xelvo may report app
                 lifecycle and screen activity, including which Xelvo screen is visible,
-                whether a feature was used, workflow results, ad impressions, Remove Ads entry use, and closed technical categories such as container, codec, decoder, failure
-                category, and compatibility fallback result. Xelvo may also report integer-millisecond startup time, active-playing time, finite media duration, playback position, video height, and audio channel count to improve playback compatibility and performance. Firebase may derive standard
+                workflow results, ad impressions, Remove Ads entry use, and closed technical categories such as container, a network stream format declaration, codec, decoder, failure
+                category, and compatibility fallback result. A stream format declaration is mapped immediately from the response Content-Type or URL suffix into a closed category; this format observation does not create, retain, or report a raw copy of the Content-Type, suffix, response headers, URL, host, path, redirect target, or load identity. Device-local stream URL storage is described above and is not sent as Xelvo telemetry. Xelvo may also report integer-millisecond startup time, active-playing time, finite media duration, playback position, video height, and audio channel count to improve playback compatibility and performance. Firebase may derive standard
                 visible-screen engagement from screen events. These reports are
                 designed not to include media filenames, titles, paths, URIs, URLs,
                 media content, user-entered text, credentials, or raw error messages.
