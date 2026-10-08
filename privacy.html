@@ -41,7 +41,7 @@
             device by default, while optional Google services are kept separate
             from the core playback task.
           </p>
-          <p class="meta">Last updated: September 2, 2026</p>
+          <p class="meta">Last updated: October 8, 2026</p>
         </header>
 
         <div class="summary-band" aria-labelledby="privacy-summary">
@@ -90,7 +90,7 @@
             subtitles, lyrics, artwork, search terms, playlist names, bookmarks,
             and identifiers derived from those values are not sent as Xelvo telemetry.
             Playback events may include an exact position. A random playback ID may link the
-            start, decoder transition, and exit of one successful playback; it contains no
+            start, decoder transition, low-memory decoding notice, and exit of one successful playback; it contains no
             media information and is not reused for another playback. Local
             media is not uploaded to an Xelvo server by default, and Xelvo does
             not currently provide an account or cloud sync.
@@ -140,11 +140,11 @@
                 When Analytics is enabled and consented, Xelvo may report app
                 lifecycle and screen activity, including which Xelvo screen is visible,
                 workflow results, ad impressions, Remove Ads entry use, and closed technical categories such as container, a network stream format declaration, codec, decoder, failure
-                category, and compatibility fallback result. A stream format declaration is mapped immediately from the response Content-Type or URL suffix into a closed category; this format observation does not create, retain, or report a raw copy of the Content-Type, suffix, response headers, URL, host, path, redirect target, or load identity. Device-local stream URL storage is described above and is not sent as Xelvo telemetry. Xelvo may also report integer-millisecond startup time, active-playing time, finite media duration, playback position, video height, and audio channel count to improve playback compatibility and performance. Firebase may derive standard
+                category, and compatibility fallback result. A stream format declaration is mapped immediately from the response Content-Type or URL suffix into a closed category; this format observation does not create, retain, or report a raw copy of the Content-Type, suffix, response headers, URL, host, path, redirect target, or load identity. Device-local stream URL storage is described above and is not sent as Xelvo telemetry. Xelvo may also report integer-millisecond startup time, active-playing time, finite media duration, playback position, video width and height, rounded video frame rate, and audio channel count to improve playback compatibility and performance. When a device that Android reports as low-memory cannot hardware-decode a video and Xelvo shows a notice that it will use software decoding, Xelvo may also report coarse device memory information: total memory rounded to the nearest 256 MB, the Android low-memory device flag, and the app memory limit Android assigns. This information describes the device class, not you, and is not used as an identifier. Firebase may derive standard
                 visible-screen engagement from screen events. These reports are
                 designed not to include media filenames, titles, paths, URIs, URLs,
                 media content, user-entered text, credentials, or raw error messages.
-                A random playback ID may link start, decoder transition, and exit events from one successful playback; it contains no media information, is not persisted by Xelvo, and is not reused for another playback. Playback events may also include the exact non-negative playback position at the start, failure, or exit boundary. When Analytics collection is
+                A random playback ID may link start, decoder transition, low-memory decoding notice, and exit events from one successful playback; it contains no media information, is not persisted by Xelvo, and is not reused for another playback. Playback events may also include the exact non-negative playback position at the start, failure, or exit boundary. When Analytics collection is
                 allowed, it uses app-instance or installation identifiers and
                 may use the Advertising ID for acquisition attribution; AdMob
                 may use it for ads. Where required, Google UMP privacy options
@@ -170,6 +170,19 @@
                 may attach a small fixed diagnostic set to crash, non-fatal
                 error, or ANR reports: when three classes of local media work
                 began. These fields do not name the media being processed.
+                When playback of a supported file or stream fails because of a
+                problem in Xelvo itself, Xelvo also sends a non-fatal error
+                report under the same crash reporting setting. It contains a
+                fixed failure category, the playback stage, whether the item was
+                local or a stream, audio or video, the decoder route, the
+                container and codec types, and a short list of the last few
+                playback actions and results with their timing. Failures caused
+                by the content or environment, such as a damaged or unsupported
+                file, a network error, or a missing or inaccessible file, do not
+                by themselves create a Crashlytics report, but they can appear
+                as fixed categories in that short list of recent playback
+                actions. The list of recent playback actions may also be sent
+                with a later crash report from the same app session.
                 Xelvo limits explicit reports to
                 sanitized categories and does not
                 intentionally attach media names, paths, URLs, content, user
