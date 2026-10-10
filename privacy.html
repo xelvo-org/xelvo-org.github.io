@@ -41,7 +41,7 @@
             device by default, while optional Google services are kept separate
             from the core playback task.
           </p>
-          <p class="meta">Last updated: October 8, 2026</p>
+          <p class="meta">Last updated: October 9, 2026</p>
         </header>
 
         <div class="summary-band" aria-labelledby="privacy-summary">
@@ -140,7 +140,7 @@
                 When Analytics is enabled and consented, Xelvo may report app
                 lifecycle and screen activity, including which Xelvo screen is visible,
                 workflow results, ad impressions, Remove Ads entry use, and closed technical categories such as container, a network stream format declaration, codec, decoder, failure
-                category, and compatibility fallback result. A stream format declaration is mapped immediately from the response Content-Type or URL suffix into a closed category; this format observation does not create, retain, or report a raw copy of the Content-Type, suffix, response headers, URL, host, path, redirect target, or load identity. Device-local stream URL storage is described above and is not sent as Xelvo telemetry. Xelvo may also report integer-millisecond startup time, active-playing time, finite media duration, playback position, video width and height, rounded video frame rate, and audio channel count to improve playback compatibility and performance. When a device that Android reports as low-memory cannot hardware-decode a video and Xelvo shows a notice that it will use software decoding, Xelvo may also report coarse device memory information: total memory rounded to the nearest 256 MB, the Android low-memory device flag, and the app memory limit Android assigns. This information describes the device class, not you, and is not used as an identifier. Firebase may derive standard
+                category, and compatibility fallback result. A stream format declaration is mapped immediately from the response Content-Type or URL suffix into a closed category; this format observation does not create, retain, or report a raw copy of the Content-Type, suffix, response headers, URL, host, path, redirect target, or load identity. Device-local stream URL storage is described above and is not sent as Xelvo telemetry. Xelvo may also report integer-millisecond startup time, active-playing time, finite media duration, playback position, video width and height, rounded video frame rate, and audio channel count to improve playback compatibility and performance. When a low-memory device (one that Android reports as low-memory, or that has less than 2 GiB of total memory) cannot hardware-decode a video and Xelvo shows a notice that it will use software decoding, Xelvo may also report coarse device memory information: total memory rounded to the nearest 256 MB, the Android low-memory device flag, and the app memory limit Android assigns. This information describes the device class, not you, and is not used as an identifier. On Android 7 to 9 devices with a removable SD card or USB storage mounted, when Xelvo builds its Folders view Xelvo may also report, at most once per app version and media type, the Android version, counts of mounted removable storage volumes and of those whose folders it could locate, and a fixed outcome category (for example success or a fixed failure reason), to check that removable-storage folders are found correctly; it does not report volume names, identifiers, folder or file names, or paths. Firebase may derive standard
                 visible-screen engagement from screen events. These reports are
                 designed not to include media filenames, titles, paths, URIs, URLs,
                 media content, user-entered text, credentials, or raw error messages.
@@ -157,6 +157,67 @@
                 without Advertising ID, cookies, or Analytics persistent
                 identifiers. Xelvo also keeps a global switch to stop collection remotely.
                 Analytics never affects local playback.
+              </p>
+              <p>
+                Under the same Analytics rules, Xelvo may also report fixed
+                categories and counts that show where the app is giving a poor
+                experience. These use only fixed values and whole numbers:
+              </p>
+              <ul>
+                <li>
+                  Playback smoothness: for each playback session, how many
+                  times and for how long playback paused to buffer, how many
+                  seeks you made and the longest wait for one, and how many
+                  video frames were dropped.
+                </li>
+                <li>
+                  Device and system limits: when Android refuses to let
+                  background playback start or keep running, or refuses audio
+                  focus; when picture-in-picture or the share sheet cannot
+                  open; when the media library cannot be read; and the result
+                  of a media permission request (for example granted, partly
+                  granted, or denied).
+                </li>
+                <li>
+                  App start and previous exit: how long a cold start took to
+                  show the first screen, and, on Android 11 and later, the
+                  category Android recorded for why Xelvo's own previous app
+                  process ended (for example low memory, a crash, an ANR, or
+                  closed by the user), whether it was in the foreground or
+                  background, and whether the device is a low-memory device.
+                  Xelvo does not read or send the system's free-form exit
+                  description or trace, and does not read other apps' exits.
+                  A crash or ANR exit is sent only when crash reporting is on;
+                  turning crash reporting off also withholds it.
+                </li>
+                <li>
+                  Subtitles and lyrics: whether loading embedded, picked, or
+                  nearby subtitle or lyrics files worked, a fixed format type
+                  (for example SRT or LRC), and when you change the subtitle
+                  text encoding setting, the old and new setting and whether a
+                  subtitle or lyrics file was loaded. The text and file names
+                  are never sent.
+                </li>
+                <li>
+                  File actions: for a rename, delete, move, or copy you
+                  start, the action type, its overall result, and counts of
+                  items that failed or were not supported. File names, folders,
+                  and targets are not sent.
+                </li>
+                <li>
+                  Purchases, ads, and consent: when a purchase you start fails,
+                  whether it was a subscription or one-time purchase, a fixed
+                  reason, and at which step it failed (cancelling is not
+                  reported); when an ad fails to load or show, the ad position
+                  and a fixed reason; and the overall result of the Google
+                  consent form (for example obtained, not required, or an
+                  error).
+                </li>
+              </ul>
+              <p>
+                These reports do not include product IDs, prices, order or
+                purchase tokens, raw error codes or messages, or media
+                information. Some are limited to one report per app launch.
               </p>
             </article>
 
@@ -183,6 +244,22 @@
                 as fixed categories in that short list of recent playback
                 actions. The list of recent playback actions may also be sent
                 with a later crash report from the same app session.
+                If the Google Mobile Ads SDK fails to start on a device, Xelvo
+                stops trying to load Google ads until the app restarts and may
+                send one non-fatal error report per app launch containing only a
+                fixed category; a known Google Mobile Ads SDK error caught on
+                its own background thread may be reported with its exception
+                type and stack trace.
+                Under the same setting, Xelvo may also send non-fatal error
+                reports for other problems in Xelvo itself, each grouped by a
+                fixed cause and carrying only fixed values: a playback engine
+                that could not be released cleanly (engine type and cause), the
+                next part of a playback list that could not be read (fixed read
+                result), a media library read error (audio or video), a Google
+                Play purchase that could not be acknowledged (fixed response
+                category) or confirmed (subscription or one-time purchase), an
+                ad-free reward that could not be saved, and app settings or
+                purchase-state storage that was damaged and reset (which store).
                 Xelvo limits explicit reports to
                 sanitized categories and does not
                 intentionally attach media names, paths, URLs, content, user
@@ -218,7 +295,10 @@
                 transaction information under its own policy. Xelvo receives the
                 product and entitlement status needed to provide ad-free access;
                 Xelvo does not require a separate account or receive full
-                payment-card details.
+                payment-card details. As described above, Xelvo's Analytics may
+                record that a purchase you started failed, and Crashlytics may
+                record a purchase that could not be acknowledged or confirmed,
+                using only the purchase type and fixed categories.
               </p>
             </article>
           </div>
@@ -303,7 +383,10 @@
                 Crashlytics is separately enabled by default for reliability,
                 and every user can turn it off under Data collection. Turning it
                 off fully applies after Xelvo restarts and deletes reports still
-                waiting to be sent; uploaded reports cannot be recalled. Local
+                waiting to be sent; uploaded reports cannot be recalled. The
+                Analytics report of why Xelvo's previous app process ended
+                (which can say it crashed or stopped responding) follows the
+                Analytics choice, not this Crashlytics setting. Local
                 playback is never affected.
               </dd>
             </div>
