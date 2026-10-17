@@ -41,7 +41,7 @@
             device by default, while optional Google services are kept separate
             from the core playback task.
           </p>
-          <p class="meta">Last updated: October 9, 2026</p>
+          <p class="meta">Last updated: October 17, 2026</p>
         </header>
 
         <div class="summary-band" aria-labelledby="privacy-summary">
@@ -181,10 +181,7 @@
                 <li>
                   App start and previous exit: how long a cold start took to
                   show the first screen, and, on Android 11 and later, the
-                  category Android recorded for why Xelvo's own previous app
-                  process ended (for example low memory, a crash, an ANR, or
-                  closed by the user), whether it was in the foreground or
-                  background, and whether the device is a low-memory device.
+                  category Android recorded for why Xelvo's own previous app process ended (for example low memory, a crash, an ANR, a permission change, or a package update), whether it was in the foreground or background, and whether the device is a low-memory device. When the system time allows, we also report how long before the check that exit was recorded; the report can happen on a later app start.
                   Xelvo does not read or send the system's free-form exit
                   description or trace, and does not read other apps' exits.
                   A crash or ANR exit is sent only when crash reporting is on;
@@ -383,11 +380,8 @@
                 Crashlytics is separately enabled by default for reliability,
                 and every user can turn it off under Data collection. Turning it
                 off fully applies after Xelvo restarts and deletes reports still
-                waiting to be sent; uploaded reports cannot be recalled. The
-                Analytics report of why Xelvo's previous app process ended
-                (which can say it crashed or stopped responding) follows the
-                Analytics choice, not this Crashlytics setting. Local
-                playback is never affected.
+                waiting to be sent; uploaded reports cannot be recalled.
+                Reports of why Xelvo's previous app process ended follow the Analytics choice. Exit reports for a crash (including a native crash) or an ANR also require crash reporting to be on. Local playback is never affected.
               </dd>
             </div>
             <div>
