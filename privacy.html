@@ -41,7 +41,7 @@
             device by default, while optional Google services are kept separate
             from the core playback task.
           </p>
-          <p class="meta">Last updated: October 17, 2026</p>
+          <p class="meta">Last updated: October 20, 2026</p>
         </header>
 
         <div class="summary-band" aria-labelledby="privacy-summary">
@@ -167,8 +167,12 @@
                 <li>
                   Playback smoothness: for each playback session, how many
                   times and for how long playback paused to buffer, how many
-                  seeks you made and the longest wait for one, and how many
-                  video frames were dropped.
+                  seeks you made and the longest wait for one, how many
+                  video frames were dropped, how many pieces of damaged audio or
+                  video data were skipped, and, if playback stopped with an
+                  error, whether switching to software decoding was tried and
+                  why, and whether the sound or the picture could not be played
+                  and a fixed reason.
                 </li>
                 <li>
                   Device and system limits: when Android refuses to let
@@ -181,11 +185,12 @@
                 <li>
                   App start and previous exit: how long a cold start took to
                   show the first screen, and, on Android 11 and later, the
-                  category Android recorded for why Xelvo's own previous app process ended (for example low memory, a crash, an ANR, a permission change, or a package update), whether it was in the foreground or background, and whether the device is a low-memory device. When the system time allows, we also report how long before the check that exit was recorded; the report can happen on a later app start.
+                  category Android recorded for why Xelvo's own previous app process ended (for example low memory, a crash, an ANR, a permission change, or a package update), whether it was in the foreground or background (and so whether it closed unexpectedly while you were using Xelvo), and whether the device is a low-memory device. When the system time allows, we also report how long before the check that exit was recorded; the report can happen on a later app start.
                   Xelvo does not read or send the system's free-form exit
                   description or trace, and does not read other apps' exits.
-                  A crash or ANR exit is sent only when crash reporting is on;
-                  turning crash reporting off also withholds it.
+                  A crash or ANR exit, and its unexpected-exit count, is sent
+                  only when crash reporting is on; turning crash reporting off
+                  withholds both.
                 </li>
                 <li>
                   Subtitles and lyrics: whether loading embedded, picked, or
@@ -211,6 +216,21 @@
                   error).
                 </li>
               </ul>
+              <p>
+                For some of these outcomes Xelvo also sends a separate count
+                with no details at all, and only when the detailed report above
+                is itself sent: that playback stopped with an error, paused to
+                buffer, or skipped a short part of the sound or picture because
+                the data was damaged; that a file could not be opened because
+                its format was not recognized, it was damaged or incomplete, or
+                its sound or picture encoding is not supported; that only the
+                sound or only the picture could be played; that Xelvo took 5 seconds or more to
+                show its first screen; that Xelvo closed unexpectedly while you
+                were using it; that you declined a media or file permission;
+                that a file action did not fully complete; that subtitles or
+                lyrics did not load; that media opened from another app could
+                not be played; or that the consent form failed.
+              </p>
               <p>
                 These reports do not include product IDs, prices, order or
                 purchase tokens, raw error codes or messages, or media
@@ -298,6 +318,23 @@
                 using only the purchase type and fixed categories.
               </p>
             </article>
+
+            <article class="service">
+              <span class="service-label">Updates and ratings</span>
+              <h3>Google Play In-App Update and In-App Review</h3>
+              <p>
+                Xelvo may ask Google Play whether a newer version is available,
+                for example from Settings or when playback fails; Google Play
+                handles device and app version information for that check, and
+                any update you choose is downloaded and installed by Google
+                Play. After you have used Xelvo for a while, Xelvo may ask Google
+                Play to show its rating card at a natural pause. Any rating or
+                review you submit is entered into Google Play, handled under
+                Google Play's terms, and published as a public review; Xelvo does
+                not learn whether you rated it or what you wrote, and nothing in
+                Xelvo depends on it.
+              </p>
+            </article>
           </div>
 
           <p>
@@ -311,9 +348,17 @@
         <section id="support" class="content-section">
           <h2>4. Support communications</h2>
           <p>
-            If you email support, we receive the email address and message content
-            you choose to send so we can understand and respond to the request.
-            Do not send media files, filenames, paths, URLs, subtitles, lyrics,
+            Report a problem and Feedback &amp; suggestions open your own email
+            app with a draft to xelvo.support@gmail.com. The draft is prefilled
+            with the Xelvo app version, device model, Android version and, for a
+            playback problem, a fixed failure category and, when the problem is
+            an unsupported sound or picture encoding, a fixed codec type; it never includes file
+            names, titles, paths, URLs or app identifiers. Xelvo sends nothing
+            itself: you can edit or remove any of it, and we receive only the
+            email you choose to send, including your email address. Our support
+            mailbox is provided by Gmail (Google). We use support emails only to
+            understand and respond to your request and to fix problems. Do not
+            send media files, filenames, paths, URLs, subtitles, lyrics,
             playlists, credentials, payment-card details, or other private
             content. See the <a href="support.html">support page</a> for safer
             diagnostic details to include.
@@ -381,7 +426,7 @@
                 and every user can turn it off under Data collection. Turning it
                 off fully applies after Xelvo restarts and deletes reports still
                 waiting to be sent; uploaded reports cannot be recalled.
-                Reports of why Xelvo's previous app process ended follow the Analytics choice. Exit reports for a crash (including a native crash) or an ANR also require crash reporting to be on. Local playback is never affected.
+                Reports of why Xelvo's previous app process ended follow the Analytics choice. Exit reports for a crash (including a native crash) or an ANR, and their unexpected-exit counts, also require crash reporting to be on; other unexpected-exit counts, such as when Android closes Xelvo for low memory, follow the Analytics choice. Local playback is never affected.
               </dd>
             </div>
             <div>
