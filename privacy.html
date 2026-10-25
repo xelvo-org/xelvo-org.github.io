@@ -41,7 +41,7 @@
             device by default, while optional Google services are kept separate
             from the core playback task.
           </p>
-          <p class="meta">Last updated: October 20, 2026</p>
+          <p class="meta">Last updated: October 25, 2026</p>
         </header>
 
         <div class="summary-band" aria-labelledby="privacy-summary">
@@ -130,6 +130,7 @@
                 usable whichever option you choose; ads may become
                 non-personalized, limited, or unavailable.
               </p>
+              <p>Xelvo's AdMob app is linked to Firebase. When Analytics is enabled, Google Analytics automatically records each Google ad impression with the ad format, ad network, ad unit, and the estimated earnings and currency that AdMob reports for it.</p>
               <p>If a Google ad cannot be requested or is unavailable, the library may instead show a bundled Xelvo message about ad-free options. That local message does not create an AdMob request. When Analytics is enabled, Xelvo may record that the House message was shown or that its Remove Ads action was used; it does not report ad revenue or media identity.</p>
             </article>
 
@@ -229,12 +230,81 @@
                 were using it; that you declined a media or file permission;
                 that a file action did not fully complete; that subtitles or
                 lyrics did not load; that media opened from another app could
-                not be played; or that the consent form failed.
+                not be played; that the consent form failed; that a media
+                permission request ended without a result from Android; or
+                that the media library was empty the first time it loaded.
+              </p>
+              <p>
+                To learn which features people use, and under the same Analytics
+                rules Xelvo may also report the following. They use only fixed
+                values and whole numbers:
+              </p>
+              <ul>
+                <li>
+                  Player features: for each playback session, which player
+                  features from a fixed list were used at least once (for
+                  example the speed menu, holding for 2x speed, switching audio
+                  or subtitle tracks, the kind of seek gesture, picture-in-picture,
+                  lock, aspect ratio, sleep timer, audio effects, shuffle and
+                  repeat, next and previous, and controls from the notification
+                  or headset), the speed in effect at the end, which kind of
+                  library screen playback was started from (for example all
+                  videos, a folder, songs, a playlist, Recent, or search), and
+                  whether the sound or picture could only be decoded by Xelvo's
+                  built-in decoder because the device has no system decoder
+                  for it.
+                </li>
+                <li>
+                  Library and settings: which library view is shown (for
+                  example all videos or folders), the screen orientation and
+                  window width; when you change a setting such as list or grid,
+                  sort order, folder view, theme, app language, or subtitle
+                  style, which setting and its new fixed value (the
+                  crash-reporting switch is not reported this way); the type of
+                  a library action such as share, playlist changes, favorites,
+                  Recent, or shuffle all, and how many items it involved; and,
+                  the first time the library loads after Xelvo starts, the media
+                  type, whether you allowed all or only selected videos, the
+                  result, the number of items, how long loading took, and
+                  whether access had just been granted.
+                </li>
+                <li>
+                  Permissions, errors, search, and ratings: whether a media
+                  permission request was made automatically or from a button,
+                  how many milliseconds it took to get a result, and whether
+                  Android would have shown an explanation first; which action
+                  you chose on a playback error screen; when you leave search,
+                  whether results were shown and whether you opened one (search
+                  terms and their length are never sent); and whether Xelvo
+                  asked Google Play to show its rating card or the card was
+                  unavailable.
+                </li>
+                <li>
+                  Files that cannot be opened: when a file on your device cannot
+                  be opened because its format is not recognized or it is
+                  damaged, the file size rounded up to whole kilobytes; a fixed
+                  category for the file's first bytes (Xelvo reads the first 197
+                  bytes on your device to choose the category, and the bytes
+                  themselves are not sent or kept); a fixed format category for
+                  the file-name extension (not the extension itself); and the
+                  duration, width, and height recorded by Android's media
+                  library. The file name, path, and content are never sent.
+                </li>
+              </ul>
+              <p>
+                Format and codec categories are fixed values; for a format
+                Xelvo has no category for, the category may be the short name
+                from FFmpeg's built-in list of formats (for example
+                <code>rv40</code>), never a value taken from the file. On Google
+                Play pre-launch test devices and Firebase Test Lab devices,
+                Xelvo turns Analytics and Crashlytics off and discards data the
+                Google SDKs queued on that device, so automated tests are not
+                counted as users.
               </p>
               <p>
                 These reports do not include product IDs, prices, order or
-                purchase tokens, raw error codes or messages, or media
-                information. Some are limited to one report per app launch.
+                purchase tokens, raw error codes or messages, or media names,
+                paths, or content. Some are limited to one report per app launch.
               </p>
             </article>
 
@@ -275,7 +345,8 @@
                 result), a media library read error (audio or video), a Google
                 Play purchase that could not be acknowledged (fixed response
                 category) or confirmed (subscription or one-time purchase), an
-                ad-free reward that could not be saved, and app settings or
+                ad-free reward that could not be saved, an analytics event that Xelvo
+                itself rejected before sending (only the event name), and app settings or
                 purchase-state storage that was damaged and reset (which store).
                 Xelvo limits explicit reports to
                 sanitized categories and does not
@@ -332,7 +403,9 @@
                 review you submit is entered into Google Play, handled under
                 Google Play's terms, and published as a public review; Xelvo does
                 not learn whether you rated it or what you wrote, and nothing in
-                Xelvo depends on it.
+                Xelvo depends on it. When Analytics is enabled, Xelvo may record
+                only that it asked Google Play to show the card, or that Google
+                Play had no card to show.
               </p>
             </article>
           </div>
